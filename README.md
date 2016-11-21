@@ -1,7 +1,7 @@
 # bee-progress-bar
 [![npm version](https://img.shields.io/npm/v/bee-progress-bar.svg)](https://www.npmjs.com/package/bee-progress-bar)
 [![Build Status](https://img.shields.io/travis/tinper-bee/generator-tinper-bee/master.svg)](https://travis-ci.org/tinper-bee/bee-progress-bar)
-[![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-progress-bar.svg)](https://david-dm.org/tinper-bee/bee-progress-bar#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/github/tinper-bee/bee-progress-bar/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/bee-progress-bar?branch=master)
 
 
 记录进度或动态的显示进度变化
