@@ -40,6 +40,8 @@ function demo5() {
 			<ProgressBar colors="danger" now = {50} />
 			<ProgressBar colors="success" now = {40} />
 			<ProgressBar colors="warning" now = {30} />
+            <ProgressBar colors="primary" now = {30} />
+            <ProgressBar colors="dark" now = {30} />
     	</div>
 	)
 }

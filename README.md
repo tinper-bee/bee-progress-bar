@@ -1,6 +1,6 @@
 # bee-progress-bar
 [![npm version](https://img.shields.io/npm/v/bee-progress-bar.svg)](https://www.npmjs.com/package/bee-progress-bar)
-[![Build Status](https://img.shields.io/travis/tinper-bee/generator-tinper-bee/master.svg)](https://travis-ci.org/tinper-bee/bee-progress-bar)
+[![Build Status](https://img.shields.io/travis/tinper-bee/bee-progress-bar/master.svg)](https://travis-ci.org/tinper-bee/bee-progress-bar)
 [![Coverage Status](https://coveralls.io/repos/github/tinper-bee/bee-progress-bar/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/bee-progress-bar?branch=master)
 
 

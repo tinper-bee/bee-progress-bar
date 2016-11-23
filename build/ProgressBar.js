@@ -60,13 +60,37 @@ function onlyProgressBar(props, propName, componentName) {
 }
 
 var propTypes = {
+  /**
+   *  最小数值
+   */
   min: _react.PropTypes.number,
+  /**
+   *  有效数值
+   */
   now: _react.PropTypes.number,
+  /**
+   *  最大数值
+   */
   max: _react.PropTypes.number,
+  /**
+   *  文字描述标签
+   */
   label: _react.PropTypes.node,
+  /**
+   *  文字描述标签显示
+   */
   srOnly: _react.PropTypes.bool,
+  /**
+   *  条纹样式
+   */
   striped: _react.PropTypes.bool,
+  /**
+   *  激活状态
+   */
   active: _react.PropTypes.bool,
+  /**
+   *  子组件 必须是ProgressBar
+   */
   children: onlyProgressBar,
 
   /**
@@ -81,7 +105,8 @@ var defaultProps = {
   active: false,
   isChild: false,
   srOnly: false,
-  striped: false
+  striped: false,
+  clsPrefix: 'u-progress'
 };
 
 /**
@@ -94,8 +119,6 @@ function getPercentage(now, min, max) {
   var percentage = (now - min) / (max - min) * 100;
   return Math.round(percentage * ROUND_PRECISION) / ROUND_PRECISION;
 }
-
-var clsPrefix = 'u-progress-bar';
 
 var ProgressBar = function (_React$Component) {
   _inherits(ProgressBar, _React$Component);
@@ -117,24 +140,28 @@ var ProgressBar = function (_React$Component) {
     var colors = _ref.colors;
     var className = _ref.className;
     var style = _ref.style;
+    var clsPrefix = _ref.clsPrefix;
 
-    var others = _objectWithoutProperties(_ref, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style']);
+    var others = _objectWithoutProperties(_ref, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'clsPrefix']);
 
+    var childClsPrefix = clsPrefix + '-bar';
     var classes = {
-      active: active,
-      'u-progress-bar': true,
-      'u-progress-bar-striped': active || striped
+      active: active
     };
-
-    if (colors) {
-      classes[clsPrefix + '-' + colors] = true;
+    if (active || striped) {
+      classes[childClsPrefix + '-striped'] = true;
     }
+    if (colors) {
+      classes[childClsPrefix + '-' + colors] = true;
+    }
+    var classNames = (0, _classnames2["default"])(childClsPrefix, classes);
+
     //返回不敢wrapper的progressbar
     return _react2["default"].createElement(
       'div',
       _extends({}, others, {
         role: 'progressbar',
-        className: (0, _classnames2["default"])(className, classes),
+        className: (0, _classnames2["default"])(className, classNames),
         style: _extends({ width: getPercentage(now, min, max) + '%' }, style),
         'u-valuenow': now,
         'u-valuemin': min,
@@ -173,26 +200,26 @@ var ProgressBar = function (_React$Component) {
     var className = props.className;
     var style = props.style;
     var children = props.children;
+    var clsPrefix = props.clsPrefix;
 
-    var wrapperProps = _objectWithoutProperties(props, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'children']);
+    var wrapperProps = _objectWithoutProperties(props, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'children', 'clsPrefix']);
 
     /**
-    * 如果是单独直接用<ProgressBar /> 走children判断为false语句。
-    * 如果以组的形式使用<ProgressBar><ProgressBar now={10} /><ProgressBar now={20}/></ProgressBar> 走判断语句为true，
-    * 将children分别加上isChild=true的属性
-    */
+     * 如果是单独直接用<ProgressBar /> 走children判断为false语句。
+     * 如果以组的形式使用<ProgressBar><ProgressBar now={10} /><ProgressBar now={20}/></ProgressBar> 走判断语句为true，
+     * 将children分别加上isChild=true的属性
+     */
 
 
     return _react2["default"].createElement(
       'div',
       _extends({}, wrapperProps, {
-        className: (0, _classnames2["default"])(className, 'u-progress')
+        className: (0, _classnames2["default"])(className, clsPrefix)
       }),
       children ? _react2["default"].Children.map(children, function (child) {
         return (0, _react.cloneElement)(child, { isChild: true });
-      }) : this.renderProgressBar({
-        min: min, now: now, max: max, label: label, srOnly: srOnly, striped: striped, active: active, colors: colors, className: className, style: style
-      })
+      }) : this.renderProgressBar(_extends({
+        min: min, now: now, max: max, label: label, srOnly: srOnly, striped: striped, active: active, colors: colors, className: className, style: style, clsPrefix: clsPrefix }, wrapperProps))
     );
   };
 
