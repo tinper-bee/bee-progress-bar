@@ -106,7 +106,7 @@ class ProgressBar extends React.Component {
     min, now, max, label, srOnly, striped, active, colors, className, style,clsPrefix, ...others
   }) {
     let childClsPrefix  = clsPrefix+'-bar';
-    const classes = {
+    let classes = {
       active
     };
     if(active || striped) {
