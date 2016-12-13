@@ -89,6 +89,10 @@ var propTypes = {
    */
   active: _react.PropTypes.bool,
   /**
+   *  大小
+   */
+  size: _react.PropTypes.oneOf(['xm', 'sm']),
+  /**
    *  子组件 必须是ProgressBar
    */
   children: onlyProgressBar,
@@ -154,6 +158,7 @@ var ProgressBar = function (_React$Component) {
     if (colors) {
       classes[childClsPrefix + '-' + colors] = true;
     }
+
     var classNames = (0, _classnames2["default"])(childClsPrefix, classes);
 
     //返回不敢wrapper的progressbar
@@ -199,10 +204,11 @@ var ProgressBar = function (_React$Component) {
     var colors = props.colors;
     var className = props.className;
     var style = props.style;
+    var size = props.size;
     var children = props.children;
     var clsPrefix = props.clsPrefix;
 
-    var wrapperProps = _objectWithoutProperties(props, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'children', 'clsPrefix']);
+    var wrapperProps = _objectWithoutProperties(props, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'size', 'children', 'clsPrefix']);
 
     /**
      * 如果是单独直接用<ProgressBar /> 走children判断为false语句。
@@ -214,7 +220,7 @@ var ProgressBar = function (_React$Component) {
     return _react2["default"].createElement(
       'div',
       _extends({}, wrapperProps, {
-        className: (0, _classnames2["default"])(className, clsPrefix)
+        className: (0, _classnames2["default"])(className, clsPrefix, size)
       }),
       children ? _react2["default"].Children.map(children, function (child) {
         return (0, _react.cloneElement)(child, { isChild: true });
