@@ -69,6 +69,10 @@ const propTypes = {
      */
     active: PropTypes.bool,
     /**
+     *  大小
+     */
+    size: PropTypes.oneOf(['xm','sm']),
+    /**
      *  子组件 必须是ProgressBar
      */
     children: onlyProgressBar,
@@ -115,6 +119,7 @@ class ProgressBar extends React.Component {
     if(colors) {
         classes[`${childClsPrefix}-${colors}`] = true;
     }
+    
     let classNames = classnames(childClsPrefix,classes);
 
     //返回不敢wrapper的progressbar
@@ -153,6 +158,7 @@ class ProgressBar extends React.Component {
       colors,
       className,
       style,
+      size,
       children,
       clsPrefix,
       ...wrapperProps
@@ -166,7 +172,7 @@ class ProgressBar extends React.Component {
     return (
       <div
         {...wrapperProps}
-        className={classnames(className, clsPrefix)}
+        className={classnames(className, clsPrefix, size)}
       >
         {children ?
           React.Children.map(children, child => (

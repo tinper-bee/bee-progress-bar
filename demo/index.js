@@ -36,12 +36,12 @@ function demo4() {
 function demo5() {
     return( 
     	<div className="demo-progress-bar">
-    		<ProgressBar colors="info" now = {20} />
+    		<ProgressBar size="xm"  colors="info" now = {20} />
 			<ProgressBar colors="danger" now = {50} />
 			<ProgressBar colors="success" now = {40} />
 			<ProgressBar colors="warning" now = {30} />
             <ProgressBar colors="primary" now = {30} />
-            <ProgressBar colors="dark" now = {30} />
+            <ProgressBar size="sm" colors="dark" now = {30} />
     	</div>
 	)
 }
@@ -49,7 +49,7 @@ function demo5() {
 function demo6() {
     return( 
     	<div className="demo-progress-bar">
-    		<ProgressBar>
+    		<ProgressBar size="sm">
 				<ProgressBar colors="danger" now = {10} />
 				<ProgressBar colors="success" now = {20} />
 				<ProgressBar colors="warning" now = {30} />

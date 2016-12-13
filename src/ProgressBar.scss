@@ -21,6 +21,13 @@
     -webkit-transition: width .6s ease;
     transition: width .6s ease;
 }
+.u-progress.sm {
+    height: 10px;
+}
+.u-progress.xm {
+    height: 5px;
+    width: 170px
+}
 .u-progress-bar-success {
     @include progress-styles-variant($progress-success-bg);
 }
