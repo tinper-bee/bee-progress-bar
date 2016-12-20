@@ -23,7 +23,7 @@ class Demo1 extends Component {
 		)
 	}
 }/**
- * @title active ProgressBar
+ * @title 激活状态 ProgressBar
  * @description 添加参数active,具备动画。
  */
 class Demo2 extends Component {
@@ -46,7 +46,7 @@ class Demo3 extends Component {
 			</ProgressBar>	
 		)
 	}
-}var DemoArray = [{"example":<Demo1 />,"title":" 基本样式展示","code":"/**\n * @title 基本样式展示\n * @description now 控制实际进度\n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<ProgressBar now = {30} />\n\t\t)\n\t}\n}","desc":" now 控制实际进度"},{"example":<Demo2 />,"title":" active ProgressBar","code":"/**\n * @title active ProgressBar\n * @description 添加参数active,具备动画。\n */\nclass Demo2 extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<ProgressBar active now = {40}/>\n\t\t)\n\t}\n}","desc":" 添加参数active,具备动画。"},{"example":<Demo3 />,"title":" 进度条组合","code":"/**\n * @title 进度条组合\n * @description 多种状态或者背景的进度条组合成一条。`size`控制大小。\n */\nclass Demo3 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<ProgressBar size=\"sm\">\n\t\t\t\t<ProgressBar colors=\"danger\" now = {10} />\n\t\t\t\t<ProgressBar colors=\"success\" now = {20} />\n\t\t\t\t<ProgressBar colors=\"warning\" now = {30} />\n\t\t\t</ProgressBar>\t\n\t\t)\n\t}\n}","desc":" 多种状态或者背景的进度条组合成一条。`size`控制大小。"}]
+}var DemoArray = [{"example":<Demo1 />,"title":" 基本样式展示","code":"/**\n * @title 基本样式展示\n * @description now 控制实际进度\n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<ProgressBar now = {30} />\n\t\t)\n\t}\n}","desc":" now 控制实际进度"},{"example":<Demo2 />,"title":" 激活状态 ProgressBar","code":"/**\n * @title 激活状态 ProgressBar\n * @description 添加参数active,具备动画。\n */\nclass Demo2 extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<ProgressBar active now = {40}/>\n\t\t)\n\t}\n}","desc":" 添加参数active,具备动画。"},{"example":<Demo3 />,"title":" 进度条组合","code":"/**\n * @title 进度条组合\n * @description 多种状态或者背景的进度条组合成一条。`size`控制大小。\n */\nclass Demo3 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<ProgressBar size=\"sm\">\n\t\t\t\t<ProgressBar colors=\"danger\" now = {10} />\n\t\t\t\t<ProgressBar colors=\"success\" now = {20} />\n\t\t\t\t<ProgressBar colors=\"warning\" now = {30} />\n\t\t\t</ProgressBar>\t\n\t\t)\n\t}\n}","desc":" 多种状态或者背景的进度条组合成一条。`size`控制大小。"}]
 
 
 class Demo extends Component {
