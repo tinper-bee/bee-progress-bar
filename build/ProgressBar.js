@@ -91,7 +91,11 @@ var propTypes = {
   /**
    *  大小
    */
-  size: _react.PropTypes.oneOf(['xm', 'sm']),
+  size: _react.PropTypes.oneOf(['xs', 'sm']),
+  /**
+   *  labelPosition
+   */
+  labelPosition: _react.PropTypes.oneOf(['right', 'left', 'center']),
   /**
    *  子组件 必须是ProgressBar
    */
@@ -110,6 +114,7 @@ var defaultProps = {
   isChild: false,
   srOnly: false,
   striped: false,
+  labelPosition: 'center',
   clsPrefix: 'u-progress'
 };
 
@@ -142,10 +147,11 @@ var ProgressBar = function (_React$Component) {
         striped = _ref.striped,
         active = _ref.active,
         colors = _ref.colors,
+        labelPosition = _ref.labelPosition,
         className = _ref.className,
         style = _ref.style,
         clsPrefix = _ref.clsPrefix,
-        others = _objectWithoutProperties(_ref, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'clsPrefix']);
+        others = _objectWithoutProperties(_ref, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'labelPosition', 'className', 'style', 'clsPrefix']);
 
     var childClsPrefix = clsPrefix + '-bar';
     var classes = {
@@ -171,11 +177,15 @@ var ProgressBar = function (_React$Component) {
         'u-valuemin': min,
         'u-valuemax': max
       }),
-      srOnly ? _react2["default"].createElement(
+      _react2["default"].createElement(
         'span',
-        { className: 'sr-only' },
-        label
-      ) : label
+        { className: 'u-progress-label' },
+        srOnly ? _react2["default"].createElement(
+          'span',
+          { className: 'sr-only' },
+          label
+        ) : label
+      )
     );
   };
 
@@ -203,9 +213,10 @@ var ProgressBar = function (_React$Component) {
         className = props.className,
         style = props.style,
         size = props.size,
+        labelPosition = props.labelPosition,
         children = props.children,
         clsPrefix = props.clsPrefix,
-        wrapperProps = _objectWithoutProperties(props, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'size', 'children', 'clsPrefix']);
+        wrapperProps = _objectWithoutProperties(props, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'size', 'labelPosition', 'children', 'clsPrefix']);
 
     /**
      * 如果是单独直接用<ProgressBar /> 走children判断为false语句。
@@ -222,7 +233,7 @@ var ProgressBar = function (_React$Component) {
       children ? _react2["default"].Children.map(children, function (child) {
         return (0, _react.cloneElement)(child, { isChild: true });
       }) : this.renderProgressBar(_extends({
-        min: min, now: now, max: max, label: label, srOnly: srOnly, striped: striped, active: active, colors: colors, className: className, style: style, clsPrefix: clsPrefix }, wrapperProps))
+        min: min, now: now, max: max, label: label, srOnly: srOnly, striped: striped, active: active, colors: colors, labelPosition: labelPosition, className: className, style: style, clsPrefix: clsPrefix }, wrapperProps))
     );
   };
 
