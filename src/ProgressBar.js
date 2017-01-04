@@ -71,7 +71,11 @@ const propTypes = {
     /**
      *  大小
      */
-    size: PropTypes.oneOf(['xm','sm']),
+    size: PropTypes.oneOf(['xs','sm']),
+    /**
+     *  labelPosition
+     */
+    labelPosition: PropTypes.oneOf(['right','left','center']),
     /**
      *  子组件 必须是ProgressBar
      */
@@ -90,6 +94,7 @@ const defaultProps = {
     isChild: false,
     srOnly: false,
     striped: false,
+    labelPosition: 'center',
     clsPrefix: 'u-progress'
 };
 
@@ -107,7 +112,7 @@ function getPercentage(now, min, max) {
 
 class ProgressBar extends React.Component {
   renderProgressBar({
-    min, now, max, label, srOnly, striped, active, colors, className, style,clsPrefix, ...others
+    min, now, max, label, srOnly, striped, active, colors,labelPosition, className, style,clsPrefix, ...others
   }) {
     let childClsPrefix  = clsPrefix+'-bar';
     let classes = {
@@ -133,7 +138,7 @@ class ProgressBar extends React.Component {
         u-valuemin={min}
         u-valuemax={max}
       >
-        {srOnly ? <span className="sr-only">{label}</span> : label}
+        <span className="u-progress-label">{srOnly ? <span className="sr-only">{label}</span> : label}</span>
       </div>
     );
   }
@@ -159,6 +164,7 @@ class ProgressBar extends React.Component {
       className,
       style,
       size,
+      labelPosition,
       children,
       clsPrefix,
       ...wrapperProps
@@ -179,7 +185,7 @@ class ProgressBar extends React.Component {
             cloneElement(child, { isChild: true }
           ))) :
           this.renderProgressBar({
-            min, now, max, label, srOnly, striped, active, colors, className, style, clsPrefix, ...wrapperProps
+            min, now, max, label, srOnly, striped, active, colors,labelPosition, className, style, clsPrefix, ...wrapperProps
           })
         }
       </div>

@@ -5,7 +5,7 @@
 class Demo2 extends Component {
 	render(){
 		return (
-			<ProgressBar active now = {40}/>
+			<ProgressBar active now = {40} />
 		)
 	}
 }
