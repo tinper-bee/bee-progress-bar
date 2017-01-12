@@ -25,17 +25,19 @@
 
 .u-progress.sm {
     height: $progress-sm-height;
-    .u-progress-label {
-        position: absolute;
-        font-size: $progress-sm-lable-font-size;
+    .u-progress-bar {
         line-height: $progress-sm-lable-line-height;
+    }
+    .u-progress-label {
+        font-size: $progress-sm-lable-font-size;
     }
 }
 .u-progress.xs {
     height: $progress-xs-height;
     width: $progress-xs-width;
+    margin-left: 10px;
     .u-progress-label {
-        margin-left: $progress-xs-lable-margin-left;
+        left: 0;
         color: $progress-xs-lable-color;
         position: absolute;
         font-size: $progress-xs-lable-font-size;
