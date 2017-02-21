@@ -134,9 +134,6 @@ class ProgressBar extends React.Component {
         role="progressbar"
         className={classnames(className, classNames)}
         style={{ width: `${getPercentage(now, min, max)}%`, ...style }}
-        u-valuenow={now}
-        u-valuemin={min}
-        u-valuemax={max}
       >
         <span className="u-progress-label">{srOnly ? <span className="sr-only">{label}</span> : label}</span>
       </div>
