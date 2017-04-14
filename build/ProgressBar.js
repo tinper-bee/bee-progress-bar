@@ -132,11 +132,29 @@ function getPercentage(now, min, max) {
 var ProgressBar = function (_React$Component) {
   _inherits(ProgressBar, _React$Component);
 
-  function ProgressBar() {
+  function ProgressBar(props) {
     _classCallCheck(this, ProgressBar);
 
-    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+    _this.state = {
+      now: _this.props.now,
+      max: _this.props.max,
+      min: _this.props.min,
+      active: _this.props.active
+    };
+
+    return _this;
   }
+
+  ProgressBar.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    this.state = {
+      now: nextProps.now,
+      max: this.props.max,
+      min: this.props.min,
+      active: this.props.active
+    };
+  };
 
   ProgressBar.prototype.renderProgressBar = function renderProgressBar(_ref) {
     var min = _ref.min,
@@ -198,14 +216,14 @@ var ProgressBar = function (_React$Component) {
     if (isChild) {
       return this.renderProgressBar(props);
     }
+    var max = this.state.max;
+    var min = this.state.min;
+    var active = this.state.active;
+    var now = this.state.now;
 
-    var min = props.min,
-        now = props.now,
-        max = props.max,
-        label = props.label,
+    var label = props.label,
         srOnly = props.srOnly,
         striped = props.striped,
-        active = props.active,
         colors = props.colors,
         className = props.className,
         style = props.style,
@@ -213,7 +231,7 @@ var ProgressBar = function (_React$Component) {
         labelPosition = props.labelPosition,
         children = props.children,
         clsPrefix = props.clsPrefix,
-        wrapperProps = _objectWithoutProperties(props, ['min', 'now', 'max', 'label', 'srOnly', 'striped', 'active', 'colors', 'className', 'style', 'size', 'labelPosition', 'children', 'clsPrefix']);
+        wrapperProps = _objectWithoutProperties(props, ['label', 'srOnly', 'striped', 'colors', 'className', 'style', 'size', 'labelPosition', 'children', 'clsPrefix']);
 
     /**
      * 如果是单独直接用<ProgressBar /> 走children判断为false语句。
