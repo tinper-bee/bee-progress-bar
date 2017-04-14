@@ -111,6 +111,25 @@ function getPercentage(now, min, max) {
 
 
 class ProgressBar extends React.Component {
+  constructor(props) {
+     super(props);
+     this.state = {
+        now:this.props.now,
+        max:this.props.max,
+        min:this.props.min,
+        active:this.props.active
+     }
+
+  }
+  componentWillReceiveProps(nextProps) {
+    this.state = {
+        now:nextProps.now,
+        max:this.props.max,
+        min:this.props.min,
+        active:this.props.active
+     }
+  }
+
   renderProgressBar({
     min, now, max, label, srOnly, striped, active, colors,labelPosition, className, style,clsPrefix, ...others
   }) {
@@ -148,15 +167,15 @@ class ProgressBar extends React.Component {
     if (isChild) {
       return this.renderProgressBar(props);
     }
-
+    let max = this.state.max;
+    let min = this.state.min;
+    let active = this.state.active;
+    let now = this.state.now;
+    
     const {
-      min,
-      now,
-      max,
       label,
       srOnly,
       striped,
-      active,
       colors,
       className,
       style,
