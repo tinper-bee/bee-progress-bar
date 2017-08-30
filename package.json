@@ -1,6 +1,6 @@
 {
  "name": "bee-progress-bar",
- "version": "0.1.8",
+ "version": "0.1.9",
  "description": "progress-bar ui component for react",
  "keywords": [
   "react",
@@ -35,6 +35,7 @@
  "dependencies": {
   "bee-button": "^0.2.2",
   "classnames": "^2.2.5",
+  "babel-runtime": "^6.23.0",
   "tinper-bee-core": "latest"
  },
  "devDependencies": {

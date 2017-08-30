@@ -2,6 +2,10 @@
  * @title 带label ProgressBar
  * @description
  */
+
+import React, { Component } from 'react';
+import ProgressBar from '../../src';
+
 class Demo4 extends Component {
 	render(){
 		let now = 40;
@@ -14,3 +18,5 @@ class Demo4 extends Component {
 		)
 	}
 }
+
+export default Demo4;
