@@ -80,6 +80,10 @@ const propTypes = {
      *  子组件 必须是ProgressBar
      */
     children: onlyProgressBar,
+    /**
+     *  子组件 必须是ProgressBar
+     */
+    style: PropTypes.object,
 
   /**
    * @private
@@ -137,6 +141,7 @@ class ProgressBar extends React.Component {
     let classes = {
       active
     };
+    debugger;
     if(active || striped) {
         classes[`${childClsPrefix}-striped`] = true;
     }
@@ -167,11 +172,7 @@ class ProgressBar extends React.Component {
     if (isChild) {
       return this.renderProgressBar(props);
     }
-    let max = this.state.max;
-    let min = this.state.min;
-    let active = this.state.active;
-    let now = this.state.now;
-    
+
     const {
       label,
       srOnly,
@@ -179,6 +180,10 @@ class ProgressBar extends React.Component {
       colors,
       className,
       style,
+      min,
+      max,
+      now,
+      active,
       size,
       labelPosition,
       children,

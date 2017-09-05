@@ -100,6 +100,10 @@ var propTypes = {
    *  子组件 必须是ProgressBar
    */
   children: onlyProgressBar,
+  /**
+   *  子组件 必须是ProgressBar
+   */
+  style: _react.PropTypes.object,
 
   /**
    * @private
@@ -175,6 +179,7 @@ var ProgressBar = function (_React$Component) {
     var classes = {
       active: active
     };
+    debugger;
     if (active || striped) {
       classes[childClsPrefix + '-striped'] = true;
     }
@@ -216,10 +221,6 @@ var ProgressBar = function (_React$Component) {
     if (isChild) {
       return this.renderProgressBar(props);
     }
-    var max = this.state.max;
-    var min = this.state.min;
-    var active = this.state.active;
-    var now = this.state.now;
 
     var label = props.label,
         srOnly = props.srOnly,
@@ -227,11 +228,15 @@ var ProgressBar = function (_React$Component) {
         colors = props.colors,
         className = props.className,
         style = props.style,
+        min = props.min,
+        max = props.max,
+        now = props.now,
+        active = props.active,
         size = props.size,
         labelPosition = props.labelPosition,
         children = props.children,
         clsPrefix = props.clsPrefix,
-        wrapperProps = _objectWithoutProperties(props, ['label', 'srOnly', 'striped', 'colors', 'className', 'style', 'size', 'labelPosition', 'children', 'clsPrefix']);
+        wrapperProps = _objectWithoutProperties(props, ['label', 'srOnly', 'striped', 'colors', 'className', 'style', 'min', 'max', 'now', 'active', 'size', 'labelPosition', 'children', 'clsPrefix']);
 
     /**
      * 如果是单独直接用<ProgressBar /> 走children判断为false语句。

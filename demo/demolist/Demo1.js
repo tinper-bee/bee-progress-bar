@@ -10,7 +10,7 @@ class Demo1 extends Component {
 
 	render () {
 		return (
-			<ProgressBar now = {40} />
+			<ProgressBar style={{width:30}} now = {40} />
 		)
 	}
 }
