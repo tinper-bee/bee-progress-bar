@@ -1,6 +1,6 @@
 import classnames from 'classnames';
-import React, { cloneElement, PropTypes } from 'react';
-
+import React, { cloneElement } from 'react';
+import PropTypes from 'prop-types';
 
 const ROUND_PRECISION = 1000;
 
