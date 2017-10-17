@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -63,39 +67,39 @@ var propTypes = {
   /**
    *  最小数值
    */
-  min: _react.PropTypes.number,
+  min: _propTypes2["default"].number,
   /**
    *  有效数值
    */
-  now: _react.PropTypes.number,
+  now: _propTypes2["default"].number,
   /**
    *  最大数值
    */
-  max: _react.PropTypes.number,
+  max: _propTypes2["default"].number,
   /**
    *  文字描述标签
    */
-  label: _react.PropTypes.node,
+  label: _propTypes2["default"].node,
   /**
    *  文字描述标签显示
    */
-  srOnly: _react.PropTypes.bool,
+  srOnly: _propTypes2["default"].bool,
   /**
    *  条纹样式
    */
-  striped: _react.PropTypes.bool,
+  striped: _propTypes2["default"].bool,
   /**
    *  激活状态
    */
-  active: _react.PropTypes.bool,
+  active: _propTypes2["default"].bool,
   /**
    *  大小
    */
-  size: _react.PropTypes.oneOf(['xs', 'sm']),
+  size: _propTypes2["default"].oneOf(['xs', 'sm']),
   /**
    *  labelPosition
    */
-  labelPosition: _react.PropTypes.oneOf(['right', 'left', 'center']),
+  labelPosition: _propTypes2["default"].oneOf(['right', 'left', 'center']),
   /**
    *  子组件 必须是ProgressBar
    */
@@ -103,12 +107,12 @@ var propTypes = {
   /**
    *  子组件 必须是ProgressBar
    */
-  style: _react.PropTypes.object,
+  style: _propTypes2["default"].object,
 
   /**
    * @private
    */
-  isChild: _react.PropTypes.bool
+  isChild: _propTypes2["default"].bool
 };
 
 var defaultProps = {
