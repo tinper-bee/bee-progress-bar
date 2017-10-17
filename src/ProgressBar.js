@@ -141,7 +141,6 @@ class ProgressBar extends React.Component {
     let classes = {
       active
     };
-    debugger;
     if(active || striped) {
         classes[`${childClsPrefix}-striped`] = true;
     }

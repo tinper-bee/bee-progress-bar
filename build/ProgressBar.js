@@ -179,7 +179,6 @@ var ProgressBar = function (_React$Component) {
     var classes = {
       active: active
     };
-    debugger;
     if (active || striped) {
       classes[childClsPrefix + '-striped'] = true;
     }
