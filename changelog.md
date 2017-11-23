@@ -1,4 +1,11 @@
+<a name="1.0.3"></a>
+## 1.0.3 (2017-11-23)
 
-|时间|说明|修复版本|
-|---|----|---|
-|2017-9-5|修复warnig,去掉dom上多余的props|0.2.1|
+
+### Bug Fixes
+
+* **bee-progress-bar:** fix warning ([88ef2f4](https://github.com/tinper-bee/progress-bar/commit/88ef2f4))
+* **progress-bar:** 删除dependencies bee-button ([d89897f](https://github.com/tinper-bee/progress-bar/commit/d89897f))
+
+
+
