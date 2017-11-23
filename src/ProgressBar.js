@@ -126,12 +126,12 @@ class ProgressBar extends React.Component {
 
   }
   componentWillReceiveProps(nextProps) {
-    this.state = {
+    this.setState({
         now:nextProps.now,
-        max:this.props.max,
-        min:this.props.min,
-        active:this.props.active
-     }
+        max:nextProps.max,
+        min:nextProps.min,
+        active:nextProps.active
+     })
   }
 
   renderProgressBar({

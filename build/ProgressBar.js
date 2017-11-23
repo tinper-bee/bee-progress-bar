@@ -156,12 +156,12 @@ var ProgressBar = function (_React$Component) {
   }
 
   ProgressBar.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-    this.state = {
+    this.setState({
       now: nextProps.now,
-      max: this.props.max,
-      min: this.props.min,
-      active: this.props.active
-    };
+      max: nextProps.max,
+      min: nextProps.min,
+      active: nextProps.active
+    });
   };
 
   ProgressBar.prototype.renderProgressBar = function renderProgressBar(_ref) {
