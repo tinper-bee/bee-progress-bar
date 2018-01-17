@@ -18,4 +18,19 @@
 |className|增加额外的class|string|-|
 
 
+### 顶部进度条API
 
+
+#### ProgressBar.start()
+开始显示顶部进度条
+
+#### ProgressBar.set(arg)
+设置显示百分比位置，arg: 0~1
+
+#### ProgressBar.inc()
+加快进度
+
+#### ProgressBar.end()
+直接结束进度
+
+注：具体使用可以参考例四！

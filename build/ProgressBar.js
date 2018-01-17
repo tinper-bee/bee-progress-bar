@@ -18,6 +18,10 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _nprogress = require('nprogress');
+
+var _nprogress2 = _interopRequireDefault(_nprogress);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -265,6 +269,7 @@ var ProgressBar = function (_React$Component) {
 
 ProgressBar.propTypes = propTypes;
 ProgressBar.defaultProps = defaultProps;
+_extends(ProgressBar, _nprogress2["default"]);
 
 exports["default"] = ProgressBar;
 module.exports = exports['default'];

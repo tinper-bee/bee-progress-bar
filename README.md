@@ -47,6 +47,25 @@ import "./node_modules/build/bee-progress-bar.css"
 |colors|颜色oneOf:danger,info,warning,success,primary,dark|string|''|
 
 
+
+### 顶部进度条API
+
+
+#### ProgressBar.start()
+开始显示顶部进度条
+
+#### ProgressBar.set(arg)
+设置显示百分比位置，arg: 0~1
+
+#### ProgressBar.inc()
+加快进度
+
+#### ProgressBar.end()
+直接结束进度
+
+注：具体使用可以参考例四！
+
+
 #### 开发调试
 
 ```sh

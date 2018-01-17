@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React, { cloneElement } from 'react';
 import PropTypes from 'prop-types';
+import NProgress from 'nprogress';
 
 const ROUND_PRECISION = 1000;
 
@@ -215,5 +216,6 @@ class ProgressBar extends React.Component {
 
 ProgressBar.propTypes = propTypes;
 ProgressBar.defaultProps = defaultProps;
+Object.assign(ProgressBar, NProgress);
 
 export default  ProgressBar;
