@@ -1,3 +1,8 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/tinper-bee/progress-bar/compare/v1.0.5...v2.0.0) (2019-02-28)
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/tinper-bee/progress-bar/compare/v1.0.4...v1.0.5) (2018-01-24)
 
